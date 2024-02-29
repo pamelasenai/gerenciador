@@ -19,7 +19,7 @@ public class Aluno {
 
     public static Aluno criar(Aluno aluno) throws Exception {
         if (validar(aluno)){
-            aluno.id = setId();
+            aluno.id = gerarId();
             alunosCadastrados.add(aluno);
         }
         return aluno;
@@ -50,11 +50,11 @@ public class Aluno {
         return aluno;
     }
 
-    private static Integer setId() {
+    private static Integer gerarId() {
         return proximoId++;
     }
 
-    private static boolean validarDataNascimento(String dataString) throws ParseException {
+    private static boolean validarDataNascimento(String dataString) throws Exception {
         try {
             Data.stringToDate(dataString);
             return true;
