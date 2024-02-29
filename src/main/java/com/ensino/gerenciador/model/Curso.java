@@ -18,7 +18,7 @@ public class Curso {
 
     public static Curso criar(Curso curso) throws Exception {
         if (validar(curso)) {
-            curso.id = setId();
+            curso.id = gerarId();
             cursosCadastrados.add(curso);
             return curso;
         }
@@ -42,7 +42,7 @@ public class Curso {
         return curso;
     }
 
-    private static Integer setId() {
+    private static Integer gerarId() {
         return proximoId++;
     }
 
