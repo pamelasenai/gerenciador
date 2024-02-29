@@ -54,7 +54,7 @@ public class Aluno {
         return proximoId++;
     }
 
-    private static boolean validarDataNascimento(String dataString) throws ParseException {
+    private static boolean validarDataNascimento(String dataString) throws Exception {
         try {
             Data.stringToDate(dataString);
             return true;
