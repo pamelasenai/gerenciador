@@ -10,9 +10,9 @@ contendo as exigências do projeto.
 - [x] [Spring Initializer e repositório no GitHub](#-m1s08-ex-1---spring-initializer-e-repositório-no-github)
 - [x] [Classe Aluno](#-m1s08-ex-2---alunos)
 - [x] [Classe Curso](#-m1s08-ex-3---cursos)
-- [ ] [Service Alunos](#-m1s08-ex-4---service-alunos)
+- [x] [Service Alunos](#-m1s08-ex-4---service-alunos)
 - [ ] [Service Cursos](#-m1s08-ex-5---service-cursos)
-- [ ] [Controller Alunos](#-m1s08-ex-6---controller-alunos)
+- [x] [Controller Alunos](#-m1s08-ex-6---controller-alunos)
 - [ ] [Controller Cursos](#-m1s08-ex-7---controller-cursos)
 - [ ] [Matricular alunos](#-m1s08-ex-8---matricular-alunos)
 
