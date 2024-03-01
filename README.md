@@ -11,7 +11,7 @@ contendo as exigências do projeto.
 - [x] [Classe Aluno](#-m1s08-ex-2---alunos)
 - [x] [Classe Curso](#-m1s08-ex-3---cursos)
 - [x] [Service Alunos](#-m1s08-ex-4---service-alunos)
-- [ ] [Service Cursos](#-m1s08-ex-5---service-cursos)
+- [x] [Service Cursos](#-m1s08-ex-5---service-cursos)
 - [x] [Controller Alunos](#-m1s08-ex-6---controller-alunos)
 - [ ] [Controller Cursos](#-m1s08-ex-7---controller-cursos)
 - [ ] [Matricular alunos](#-m1s08-ex-8---matricular-alunos)
