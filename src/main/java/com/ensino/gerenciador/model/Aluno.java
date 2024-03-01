@@ -18,21 +18,13 @@ public class Aluno {
     @Setter private String dataNascimento;
 
     public static Aluno criar(Aluno aluno) throws Exception {
-        if (validar(aluno)){
-            aluno.id = gerarId();
-            alunosCadastrados.add(aluno);
-        }
+        aluno.id = proximoId++;
+        alunosCadastrados.add(aluno);
         return aluno;
     }
 
-    public static Aluno editar(Integer id, Aluno aluno) throws Exception {
-        if (validar(aluno)) {
-            Aluno alunoCadastrado = buscarPorId(id);
-            alunoCadastrado.setNome(aluno.getNome());
-            alunoCadastrado.setDataNascimento(aluno.getDataNascimento());
-            return alunoCadastrado;
-        }
-        return null;
+    public static boolean deletar(Aluno aluno) throws Exception {
+        return alunosCadastrados.remove(aluno);
     }
 
     public static Aluno buscarPorId(Integer id) throws Exception {
@@ -44,34 +36,7 @@ public class Aluno {
         throw new Exception("Nenhum aluno encontrado com o ID informado.");
     }
 
-    public static Aluno deletar(Integer id) throws Exception {
-        Aluno aluno = buscarPorId(id);
-        alunosCadastrados.remove(aluno);
-        return aluno;
-    }
-
-    private static Integer gerarId() {
-        return proximoId++;
-    }
-
-    private static boolean validarDataNascimento(String dataString) throws Exception {
-        try {
-            Data.stringToDate(dataString);
-            return true;
-        } catch (ParseException e) {
-            return false;
-        }
-    }
-
-    private static boolean validar(Aluno aluno) throws Exception {
-        if (aluno.getNome().isEmpty() || aluno.getNome().length() < 3) {
-            throw new Exception("Nome não pode estar em branco e deve conter no mínimo três caracteres.");
-        }
-        if (aluno.getDataNascimento().isEmpty() || !validarDataNascimento(aluno.getDataNascimento())) {
-            throw new Exception(
-                    "Data de nascimento não pode estar em branco e deve estar no formato: DD/MM/AAAA."
-            );
-        }
-        return true;
+    public static List<Aluno> buscarTodos() {
+        return Aluno.getAlunosCadastrados();
     }
 }
