@@ -13,7 +13,7 @@ contendo as exigências do projeto.
 - [x] [Service Alunos](#-m1s08-ex-4---service-alunos)
 - [x] [Service Cursos](#-m1s08-ex-5---service-cursos)
 - [x] [Controller Alunos](#-m1s08-ex-6---controller-alunos)
-- [ ] [Controller Cursos](#-m1s08-ex-7---controller-cursos)
+- [x] [Controller Cursos](#-m1s08-ex-7---controller-cursos)
 - [ ] [Matricular alunos](#-m1s08-ex-8---matricular-alunos)
 
 ## 📚 [M1S08] Ex 1 - Spring Initializer e repositório no GitHub
