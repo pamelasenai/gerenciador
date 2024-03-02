@@ -9,6 +9,6 @@ import org.springframework.web.bind.annotation.RestController;
 public class HelloWorldController {
     @GetMapping
     public String hello() {
-        return "Exercício semana 8 - Turmar FullStack[Education]";
+        return "Exercício semana 8 - Turma FullStack[Education]";
     }
 }

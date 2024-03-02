@@ -66,7 +66,25 @@ contendo as exigências do projeto.
 - Excluir curso: ``api/cursos/:id``
   - PathVariable: Integer id
   - Descrição: Exclui um curso específico com o ID fornecido.
-  
+- Matricular aluno: ``api/cursos/:id/add-aluno``
+  - PathVariable: Integer id
+  - RequestBody
+    ```json
+      {
+        "id" : 1
+      }
+    ```
+  - Descrição: Adiciona ao curso específico com o ID informado o aluno com o ID informado, retorna o curso já contendo o aluno.
+- Cancelar matricula do aluno: ``api/cursos/:id/remove-aluno``
+  - PathVariable: Integer id
+  - RequestBody
+    ```json
+      {
+        "id" : 1
+      }
+    ```
+  - Descrição: Remove do curso específico com o ID informado o aluno com o ID informado, retorna o curso já sem o aluno.
+
 ---
 
 ## 🎯  Missões/Objetivos
@@ -77,7 +95,7 @@ contendo as exigências do projeto.
 - [x] [Service Cursos](#-m1s08-ex-5---service-cursos)
 - [x] [Controller Alunos](#-m1s08-ex-6---controller-alunos)
 - [x] [Controller Cursos](#-m1s08-ex-7---controller-cursos)
-- [ ] [Matricular alunos](#-m1s08-ex-8---matricular-alunos)
+- [x] [Matricular alunos](#-m1s08-ex-8---matricular-alunos)
 
 ## 📚 [M1S08] Ex 1 - Spring Initializer e repositório no GitHub
 Crie um projeto Spring para gerenciamento de uma instituição de ensino. <br/>

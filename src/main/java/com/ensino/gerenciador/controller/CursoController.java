@@ -1,5 +1,6 @@
 package com.ensino.gerenciador.controller;
 
+import com.ensino.gerenciador.model.Aluno;
 import com.ensino.gerenciador.model.Curso;
 import com.ensino.gerenciador.service.CursoService;
 import org.springframework.web.bind.annotation.*;
@@ -30,9 +31,19 @@ public class CursoController {
         return cursoService.criar(curso);
     }
 
+    @PostMapping("{id}/add-aluno")
+    public Curso post(@PathVariable Integer id, @RequestBody Aluno aluno) throws Exception {
+        return cursoService.matricular(id, aluno.getId());
+    }
+
     @PutMapping("{id}")
     public Curso put(@PathVariable Integer id, @RequestBody Curso curso) throws Exception {
         return cursoService.editar(id, curso);
+    }
+
+    @PutMapping("{id}/remove-aluno")
+    public Curso put(@PathVariable Integer id, @RequestBody Aluno aluno) throws Exception {
+        return cursoService.cancelarMatricula(id, aluno.getId());
     }
 
     @DeleteMapping("{id}")

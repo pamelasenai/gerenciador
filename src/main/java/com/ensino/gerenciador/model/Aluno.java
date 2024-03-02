@@ -1,10 +1,8 @@
 package com.ensino.gerenciador.model;
 
-import com.ensino.gerenciador.utils.Data;
 import lombok.Getter;
 import lombok.Setter;
 
-import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -18,7 +16,7 @@ public class Aluno {
     @Setter private String dataNascimento;
 
     public static Aluno criar(Aluno aluno) throws Exception {
-        aluno.id = proximoId++;
+        aluno.id = gerarId();
         alunosCadastrados.add(aluno);
         return aluno;
     }
@@ -38,5 +36,9 @@ public class Aluno {
 
     public static List<Aluno> buscarTodos() {
         return Aluno.getAlunosCadastrados();
+    }
+
+    public static Integer gerarId() {
+        return proximoId++;
     }
 }
