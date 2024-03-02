@@ -1,5 +1,6 @@
 package com.ensino.gerenciador.service;
 
+import com.ensino.gerenciador.model.Aluno;
 import com.ensino.gerenciador.model.Curso;
 import org.springframework.stereotype.Service;
 
@@ -7,6 +8,12 @@ import java.util.List;
 
 @Service
 public class CursoService {
+    private final AlunoService alunoService;
+
+    public CursoService(AlunoService alunoService) {
+        this.alunoService = alunoService;
+    }
+
     public Curso criar(Curso curso) throws Exception {
         if (validar(curso)) {
             return Curso.criar(curso);
@@ -36,6 +43,20 @@ public class CursoService {
 
     public List<Curso> buscarTodos() {
         return Curso.buscarTodos();
+    }
+
+    public Curso matricular(Integer id, Integer alunoId) throws Exception {
+        Curso curso = buscarPorId(id);
+        Aluno aluno = alunoService.buscarPorId(alunoId);
+        Curso.matricular(curso, aluno);
+        return curso;
+    }
+
+    public Curso cancelarMatricula(Integer id, Integer alunoId) throws Exception {
+        Curso curso = buscarPorId(id);
+        Aluno aluno = alunoService.buscarPorId(alunoId);
+        Curso.cancelarMatricula(curso, aluno);
+        return curso;
     }
 
     private boolean validar(Curso curso) throws Exception {

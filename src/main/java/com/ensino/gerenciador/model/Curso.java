@@ -15,9 +15,10 @@ public class Curso {
     @Setter private String nome;
     @Setter private String descricao;
     @Setter private Integer cargaHoraria;
+    @Setter private List<Aluno> alunosMatriculados = new ArrayList<>();
 
     public static Curso criar(Curso curso) throws Exception {
-        curso.id = proximoId++;
+        curso.id = gerarId();
         cursosCadastrados.add(curso);
         return curso;
     }
@@ -37,5 +38,17 @@ public class Curso {
 
     public static List<Curso> buscarTodos() {
         return Curso.getCursosCadastrados();
+    }
+
+    public static Integer gerarId() {
+        return proximoId++;
+    }
+
+    public static void matricular(Curso curso, Aluno aluno) {
+        curso.getAlunosMatriculados().add(aluno);
+    }
+
+    public static void cancelarMatricula(Curso curso, Aluno aluno) {
+        curso.getAlunosMatriculados().remove(aluno);
     }
 }

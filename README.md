@@ -6,6 +6,87 @@
 Este projeto foi desenvolvido conforme as especificações passadas pelo professor, abaixo estão os exercícios 
 contendo as exigências do projeto.
 
+## 👾 Endpoints
+### Endpoints de alunos
+- Buscar todos os alunos: ``api/alunos``
+  - Descrição: Retorna um array vazio caso não haja alunos cadastrados ou array com todos os alunos.
+- Buscar aluno por id: ``api/alunos/:id``
+  - PathVariable: Integer id
+  - Descrição: Retorna o aluno específico com o ID informado. 
+- Criar novo aluno: ``api/alunos``
+  - RequestBody
+    ```json
+      {
+        "nome" : "Jane Doe",
+        "dataNascimento" : "20/05/1988"
+      }
+    ```
+  - Descrição: Cria um novo aluno com id, nome e data de nascimento, sendo o nome e data de nascimento fornecidos e id gerado automaticamente.
+- Editar aluno: ``api/alunos/:id``
+  - PathVariable: Integer id
+  - RequestBody
+    ```json
+      {
+        "nome" : "Jane Doe",
+        "dataNascimento" : "20/05/1988"
+      }
+    ```
+  - Descrição: Atualiza as informações de um aluno existente com o ID informado para as informações fornecidas.
+- Excluir aluno: ``api/alunos/:id``
+  - PathVariable: Integer id
+  - Descrição: Exclui um aluno específico com o ID fornecido.
+
+### Endpoints de cursos
+- Buscar todos os cursos: ``api/cursos``
+  - Descrição: Retorna um array vazio caso não haja cursos cadastrados ou array com todos os cursos.
+- Buscar curso por id: ``api/cursos/:id``
+  - PathVariable: Integer id
+  - Descrição: Retorna o curso específico com o ID informado.
+- Criar novo curso: ``api/cursos``
+  - RequestBody
+    ```json
+      {
+        "nome" : "FullStack[Education]",
+        "descricao" : "curso de front e back end",
+        "cargaHoraria": 400
+      }
+    ```
+  - Descrição: Cria um novo curso com id, descrição e carga horária, sendo a descrição e carga horária fornecidos e id gerado automaticamente.
+- Editar aluno: ``api/cursos/:id``
+  - PathVariable: Integer id
+  - RequestBody
+    ```json
+      {
+        "nome" : "FullStack[Education]",
+        "descricao" : "curso de front e back end",
+        "cargaHoraria": 400
+      }
+    ```
+  - Descrição: Atualiza as informações de um curso existente com o ID informado para as informações fornecidas.
+- Excluir curso: ``api/cursos/:id``
+  - PathVariable: Integer id
+  - Descrição: Exclui um curso específico com o ID fornecido.
+- Matricular aluno: ``api/cursos/:id/add-aluno``
+  - PathVariable: Integer id
+  - RequestBody
+    ```json
+      {
+        "id" : 1
+      }
+    ```
+  - Descrição: Adiciona ao curso específico com o ID informado o aluno com o ID informado, retorna o curso já contendo o aluno.
+- Cancelar matricula do aluno: ``api/cursos/:id/remove-aluno``
+  - PathVariable: Integer id
+  - RequestBody
+    ```json
+      {
+        "id" : 1
+      }
+    ```
+  - Descrição: Remove do curso específico com o ID informado o aluno com o ID informado, retorna o curso já sem o aluno.
+
+---
+
 ## 🎯  Missões/Objetivos
 - [x] [Spring Initializer e repositório no GitHub](#-m1s08-ex-1---spring-initializer-e-repositório-no-github)
 - [x] [Classe Aluno](#-m1s08-ex-2---alunos)
@@ -13,8 +94,8 @@ contendo as exigências do projeto.
 - [x] [Service Alunos](#-m1s08-ex-4---service-alunos)
 - [x] [Service Cursos](#-m1s08-ex-5---service-cursos)
 - [x] [Controller Alunos](#-m1s08-ex-6---controller-alunos)
-- [ ] [Controller Cursos](#-m1s08-ex-7---controller-cursos)
-- [ ] [Matricular alunos](#-m1s08-ex-8---matricular-alunos)
+- [x] [Controller Cursos](#-m1s08-ex-7---controller-cursos)
+- [x] [Matricular alunos](#-m1s08-ex-8---matricular-alunos)
 
 ## 📚 [M1S08] Ex 1 - Spring Initializer e repositório no GitHub
 Crie um projeto Spring para gerenciamento de uma instituição de ensino. <br/>
